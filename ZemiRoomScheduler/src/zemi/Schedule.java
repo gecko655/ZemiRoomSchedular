@@ -6,5 +6,6 @@ public abstract class Schedule {
 
 	Status status;
 	String laboratory;
+
 	abstract List<LectureTime> getSchedule();
 }

@@ -2,7 +2,7 @@ package zemi;
 
 import java.util.List;
 
-public class TeacherSchedule extends Schedule{
+public class TeacherSchedule extends Schedule {
 	List<List<String>> schedules;
 
 	@Override

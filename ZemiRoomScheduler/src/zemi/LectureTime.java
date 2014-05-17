@@ -3,14 +3,17 @@ package zemi;
 public class LectureTime {
 	String day;
 	String koma;
-	public LectureTime(String day, String koma){
-		this.day=day;
-		this.koma=koma;
+
+	public LectureTime(String day, String koma) {
+		this.day = day;
+		this.koma = koma;
 	}
-	public String getDay(){
+
+	public String getDay() {
 		return day;
 	}
-	public String getKoma(){
+
+	public String getKoma() {
 		return koma;
 	}
 }

@@ -7,11 +7,9 @@ public class Main {
 	static List<Reservation> reservations;
 
 	public static void main(String[] args) {
-		Calculate calc=new Calculate(IO.input());
+		Calculate calc = new Calculate(IO.input());
 		reservations = calc.calc(1);
 		IO.output(reservations);
-
-	
 
 	}
 
