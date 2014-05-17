@@ -14,4 +14,16 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>SED-14M38439.pdf</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Dropbox/lecture/sed/registration/SED-14M38439.pdf</locationURI>
+		</link>
+		<link>
+			<name>sed.pdf</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Dropbox/lecture/sed/sed.pdf</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
