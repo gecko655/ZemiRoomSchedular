@@ -20,7 +20,7 @@ public class IO {
 				String lab=entry[1];
 				Status status=Status.valueOf(entry[2]);
 				List<Integer> lectures=new ArrayList<Integer>();
-				for(int i=3;i<list.size();i++){
+				for(int i=3;i<entry.length;i++){
 					lectures.add(Integer.parseInt(entry[i]));
 				}
 				schedules.add(new StudentSchedule(lab,status,lectures));
@@ -31,7 +31,7 @@ public class IO {
 				String lab=entry[1];
 				Status status=Status.valueOf(entry[2]);
 				List<Integer> lectures=new ArrayList<Integer>();
-				for(int i=3;i<list.size();i++){
+				for(int i=3;i<entry.length;i++){
 					lectures.add(Integer.parseInt(entry[i]));
 				}
 				schedules.add(new StudentSchedule(lab,status,lectures));

@@ -10,6 +10,9 @@ public class Calculate {
 	}
 
 	List<Reservation> calc(int num) {
+		for(Schedule schedule: schedules){
+            System.err.println(schedule);
+		}
 		return null;
 	}
 

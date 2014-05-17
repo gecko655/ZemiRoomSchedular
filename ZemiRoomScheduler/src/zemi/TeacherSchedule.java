@@ -23,5 +23,10 @@ public class TeacherSchedule extends Schedule {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	public String toString() {
+		return "TeacherSchedule [teacherTime=" + teacherTime + ", status="
+				+ status + ", laboratory=" + laboratory + "]";
+	}
 
 }

@@ -26,4 +26,10 @@ public class TeacherTime {
 		return endTime;
 	}
 
+	@Override
+	public String toString() {
+		return "TeacherTime [day=" + day + ", startTime=" + startTime
+				+ ", endTime=" + endTime + "]";
+	}
+
 }

@@ -1,5 +1,5 @@
 package zemi;
 
 public enum Status {
-	Undergraduate, Master, Doctor, AssistantProfessor, associatedProfessor, Professor;
+	UnderGraduate, Master, Doctor, AssistantProfessor, AssociatedProfessor, Professor;
 }
