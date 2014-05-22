@@ -20,8 +20,8 @@ public class TeacherSchedule extends Schedule {
 
 	@Override
 	List<LectureTime> getSchedule() {
-		// TODO Auto-generated method stub
-		return null;
+
+		return LectureTime.convert(teacherTime);
 	}
 	@Override
 	public String toString() {
