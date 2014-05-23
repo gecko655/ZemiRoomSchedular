@@ -8,7 +8,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		Calculate calc = new Calculate(IO.input());
-		reservations = calc.calc(1);
+		reservations=IO.inputReservationReq();
+		reservations = calc.calc(reservations,1);
 		IO.output(reservations);
 
 	}

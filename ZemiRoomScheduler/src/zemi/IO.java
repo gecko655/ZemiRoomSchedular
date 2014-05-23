@@ -54,7 +54,31 @@ public class IO {
 		return null;
 	}
 	
-	static void inputTimetable(){
+	public static List<Reservation> inputReservationReq() {
+		
+		List<Reservation> reservations = new ArrayList<Reservation>();
+        List<String[]> list ;
+        try {
+			list = Csv.load(new File("./testdata/reservationReq.csv"), new CsvConfig(), new StringArrayListHandler());
+            for(String[] entry:list){
+            	ArrayList<Status> attendee = new ArrayList<Status>();
+                String lab=entry[0];
+                for(int i=1;i<entry.length;i++){
+                    attendee.add(Status.valueOf(entry[i]));
+                }
+                Reservation res = new Reservation(lab,attendee);
+                reservations.add(res);
+            }
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+        }
+        return reservations;
+
+		
+	}
+
+	private static void inputTimetable(){
 		LectureTimetable table = LectureTimetable.getInstance();
         List<String[]> list ;
         try {
@@ -69,7 +93,7 @@ public class IO {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+	}
 		
 	}
 

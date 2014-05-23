@@ -9,7 +9,7 @@ public class Calculate {
 		this.schedules = schedules;
 	}
 
-	List<Reservation> calc(int num) {
+	List<Reservation> calc(List<Reservation> reservations, int num) {
 		for(Schedule schedule: schedules){
             System.err.println(schedule);
 		}
