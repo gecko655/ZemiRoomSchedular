@@ -3,6 +3,8 @@ package zemi;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import jp.sf.orangesignal.csv.Csv;
@@ -10,6 +12,8 @@ import jp.sf.orangesignal.csv.CsvConfig;
 import jp.sf.orangesignal.csv.handlers.StringArrayListHandler;
 
 public class IO {
+	final static String[] days =LectureTime.days;
+	final static String[] komas =LectureTime.komas;
 	static List<Schedule> input() {
 		inputTimetable();
 		List<Schedule> schedules=new ArrayList<Schedule>();
@@ -98,7 +102,43 @@ public class IO {
 	}
 
 	static void output(List<Reservation> reservations) {
+		Collections.sort(reservations,new Comparator<Reservation>(){
+			@Override
+			public int compare(Reservation o1, Reservation o2) {
+				LectureTime[] time = new LectureTime[3];
+				time[1]=o1.getLectureTime();
+				time[2]=o2.getLectureTime();
+				int[] day=new int[3];
+				int[] koma=new int[3];
+				for(int i=1;i<=2;i++){
+                    for(day[i]=0;day[i]<days.length;day[i]++){
+                        if(time[i].getDay().equals(days[day[i]]))
+                            break;
+                    }
+                    for(koma[i]=0;koma[i]<komas.length;koma[i]++){
+                        if(time[i].getKoma().equals(komas[koma[i]]))
+                            break;
+                    }
+				}
+				if(day[1]-day[2]!=0){
+					return day[1]-day[2];
+				}else{
+                    return koma[1]-koma[2];
+				}
+			}
+			
+		});
+		for(Reservation res: reservations){
+			print(res);
+		}
 
+	}
+
+	private static void print(Reservation res) {
+		System.out.print(res.getLectureTime().getDay()+" "+res.getLectureTime().getKoma()+": ");
+		System.out.print(res.getLaboratory()+"\t"+res.getAttendee());
+		System.out.println("");
+		
 	}
 
 }

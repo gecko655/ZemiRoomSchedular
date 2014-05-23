@@ -7,6 +7,8 @@ public class LectureTime {
 	String day;
 	String koma;
 	final static int[][] defaultTime = {{900,1030},{1045,1215},{1320,1450},{1505,1635},{1650,1820}};
+	final static String[] days ={"Mon","Tue","Wed","Thu","Fri"};
+	final static String[] komas ={"1","2","3","4","5"};
 
 	public LectureTime(String day, String koma) {
 		this.day = day;
@@ -32,6 +34,37 @@ public class LectureTime {
 		}
 		return lTime;
 		
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((day == null) ? 0 : day.hashCode());
+		result = prime * result + ((koma == null) ? 0 : koma.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		LectureTime other = (LectureTime) obj;
+		if (day == null) {
+			if (other.day != null)
+				return false;
+		} else if (!day.equals(other.day))
+			return false;
+		if (koma == null) {
+			if (other.koma != null)
+				return false;
+		} else if (!koma.equals(other.koma))
+			return false;
+		return true;
 	}
 
 	@Override
