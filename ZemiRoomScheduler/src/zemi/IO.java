@@ -11,6 +11,7 @@ import jp.sf.orangesignal.csv.handlers.StringArrayListHandler;
 
 public class IO {
 	static List<Schedule> input() {
+		inputTimetable();
 		List<Schedule> schedules=new ArrayList<Schedule>();
 		try {
 			List<String[]> list ;
@@ -51,6 +52,25 @@ public class IO {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	static void inputTimetable(){
+		LectureTimetable table = LectureTimetable.getInstance();
+        List<String[]> list ;
+        try {
+			list = Csv.load(new File("./testdata/timetable.csv"), new CsvConfig(), new StringArrayListHandler());
+            for(String[] entry:list){
+                int lectureNum=Integer.valueOf(entry[0]);
+                String day=entry[1];
+                String koma=entry[2];
+                LectureTime time= new LectureTime(day, koma);
+                table.setLectureTime(lectureNum, time);
+            }
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 	static void output(List<Reservation> reservations) {

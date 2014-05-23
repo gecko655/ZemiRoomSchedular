@@ -19,9 +19,17 @@ public class StudentSchedule extends Schedule {
 
 	@Override
 	List<LectureTime> getSchedule() {
-		// TODO Auto-generated method stub
-		return null;
+		LectureTimetable table = LectureTimetable.getInstance();
+		List<LectureTime> times = new ArrayList<LectureTime>();
+		for(Integer lecture: lectures){
+            LectureTime time = table.getLectureTime(lecture);
+            if(time!=null){
+            	times.add(time);
+            }
+		}
+		return times;
 	}
+
 	@Override
 	public String toString() {
 		return "StudentSchedule [lectures=" + lectures + ", status=" + status
