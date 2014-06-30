@@ -29,7 +29,7 @@ public class LectureTime {
 		int end = Integer.parseInt(tTime.getEndTime());
 		for(int i=0;i<defaultTime.length;i++){
 			if(start<defaultTime[i][1]&&defaultTime[i][0]<end){
-				lTime.add(new LectureTime(tTime.getDay(), String.valueOf(i)+1));
+				lTime.add(new LectureTime(tTime.getDay(), String.valueOf(i+1)));
 			}
 		}
 		return lTime;
